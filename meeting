@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+if ARGV.empty?
+  help_text = <<~HELP
+    'meeting' prints out the running cost of your meeting.
+
+    Usage:
+
+      meeting [comp ...]
+
+    Compensation is expressed in thousands per year, for example, a total compensation of $50,000 per year would be "50" and meeting with several people would be expressed as additional parameters.
+
+    Example:
+
+      $ meeting 250 85 150 90
+      This meeting costs $287.50 per hour.
+      $0.80
+      $1.60
+      ...
+  HELP
+  puts help_text
+  exit 1
+end
+
+
+def salary_to_hourly(s)
+  s / 2000.0
+end
+
+
+def hourly_to_secondly(h)
+  h / (60.0 * 60.0)
+end
+
+
+cost_per_hour = ARGV.inject(0.0) { |sum, x| sum + salary_to_hourly( x.to_f * 1000.0 ) }
+cost_per_second = hourly_to_secondly(cost_per_hour)
+total = 0.0
+
+puts "This meeting costs $%.2f per hour." % cost_per_hour
+
+while true do
+  sleep 10
+  total += (cost_per_second * 10.0)
+  puts "$%.2f" % total
+end
