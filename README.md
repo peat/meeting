@@ -16,3 +16,8 @@ $1.60
 ...
 ```
 
+`meeting` will print out an update every ten seconds on how much money has been spent on your meeting.
+
+Enjoy!
+
+💸
