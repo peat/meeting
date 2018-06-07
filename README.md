@@ -4,9 +4,9 @@ Calculates the ongoing cost of a meeting, based on the compensation of the parti
 
 ## Usage
 
-Compensation is expressed in thousands per year, for example, a total compensation of $50,000 per year would be "50" with an additional parameter per person.
+Compensation is expressed in thousands per year, e.g. $50,000 per year is `50`.
 
-For example, to calculate the running cost of a meeting with participants who are making $250k, $85k, $150k, and $90k.
+As an example, to calculate the running cost of a meeting with participants who make $250k, $85k, $150k, and $90k:
 
 ```
 $ meeting 250 85 150 90
