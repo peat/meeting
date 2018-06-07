@@ -1,6 +1,6 @@
 # meeting
 
-Calculates the ongoing cost of a meeting.
+Calculates the ongoing cost of a meeting, based on the compensation of the participants.
 
 ## Usage
 
